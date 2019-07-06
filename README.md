@@ -1,2 +1,2 @@
 # React_For_Beginners
-[Normard Coder] React JS for Beginners
+[Nomad Coder] React JS for Beginners
