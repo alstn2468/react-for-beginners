@@ -1,4 +1,6 @@
-## React.js 스터디 요약
+## Nomflix
+
+Learning React and ES6 by building a Movie Discovery App.
 
 ### Fundamentals
 #### 1. Arrow Function
@@ -9,3 +11,10 @@
 #### 6. Array Map
 #### 7. Array Filter
 #### 8. For Each, Includes, Push
+
+### Screens
+
+- [ ] Home
+- [ ] TV Show
+- [ ] Search
+- [ ] Detail
