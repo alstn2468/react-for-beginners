@@ -1,2 +1,3 @@
-# React_For_Beginners
-[Nomad Coders] React JS for Beginners
+## React.js 스터디 요약
+
+### 1. Fundamentals
