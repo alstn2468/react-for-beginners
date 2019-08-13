@@ -6,9 +6,9 @@ export default class extends React.Component {
   state = {
     movieResults: null,
     tvResults: null,
-    searchTerm: "",
     error: null,
-    loading: true
+    loading: true,
+    searchTerm: ""
   };
 
   handleSubmit = () => {
@@ -47,15 +47,15 @@ export default class extends React.Component {
   };
 
   render() {
-    const { movieResults, tvResults, searchTerm, error, loading } = this.state;
+    const { movieResults, tvResults, error, loading, searchTerm } = this.state;
 
     return (
       <SearchPresenter
         movieResults={movieResults}
         tvResults={tvResults}
-        searchTerm={searchTerm}
         error={error}
         loading={loading}
+        searchTerm={searchTerm}
         handleSubmit={this.handleSubmit}
       />
     );
