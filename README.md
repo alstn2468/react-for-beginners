@@ -2,7 +2,7 @@
 
 Learning React and ES6 by building a Movie Discovery App.
 
-#### [Demo Link](https://alstn2468.github.io/React_For_Beginners)
+#### [[Demo Link]](https://alstn2468.github.io/React_For_Beginners)
 
 ### Fundamentals
 
