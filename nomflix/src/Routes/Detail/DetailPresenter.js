@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "Components/Loader";
+import Ratings from "react-ratings-declarative";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -41,6 +42,32 @@ const Cover = styled.div`
   border-radius: 5px;
 `;
 
+const Data = styled.div`
+  width: 70%;
+  margin-left: 10px;
+`;
+
+const Title = styled.h3`
+  font-size: 32px;
+`;
+
+const ItemContainer = styled.div`
+  margin: 20px 0px;
+`;
+
+const Item = styled.span``;
+
+const Divider = styled.span`
+  margin: 0px 10px;
+`;
+
+const Overview = styled.p`
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.5;
+  width: 50%;
+`;
+
 const DetailPresenter = ({ result, error, loading }) =>
   loading ? (
     <Loader />
@@ -57,6 +84,64 @@ const DetailPresenter = ({ result, error, loading }) =>
               : require("../../assets/noPosterSmall.png")
           }
         />
+        <Data>
+          <Title>
+            {result.original_title
+              ? result.original_title
+              : result.original_name}
+          </Title>
+          <ItemContainer>
+            {result.release_date
+              ? result.release_date.substring(0, 4)
+              : result.first_air_date.substring(0, 4)}
+            <Divider>•</Divider>
+            {result.runtime ? result.runtime : result.episode_run_time} min
+            <Divider>•</Divider>
+            <Item>
+              {result.genres &&
+                result.genres.map((genres, index) =>
+                  index === result.genres.length - 1
+                    ? genres.name
+                    : `${genres.name} / `
+                )}
+            </Item>
+            <Divider>•</Divider>
+            {result.vote_average && parseFloat(result.vote_average) / 2 > 0 ? (
+              <Item>
+                <Ratings rating={parseFloat(result.vote_average) / 2}>
+                  <Ratings.Widget
+                    widgetRatedColor="rgb(255,215,0)"
+                    widgetDimension="15px"
+                    widgetSpacing="0px"
+                  />
+                  <Ratings.Widget
+                    widgetRatedColor="rgb(255,215,0)"
+                    widgetDimension="15px"
+                    widgetSpacing="0px"
+                  />
+                  <Ratings.Widget
+                    widgetRatedColor="rgb(255,215,0)"
+                    widgetDimension="15px"
+                    widgetSpacing="0px"
+                  />
+                  <Ratings.Widget
+                    widgetRatedColor="rgb(255,215,0)"
+                    widgetDimension="15px"
+                    widgetSpacing="0px"
+                  />
+                  <Ratings.Widget
+                    widgetRatedColor="rgb(255,215,0)"
+                    widgetDimension="15px"
+                    widgetSpacing="0px"
+                  />
+                </Ratings>
+              </Item>
+            ) : (
+              "No Data"
+            )}
+          </ItemContainer>
+          <Overview>{result.overview}</Overview>
+        </Data>
       </Content>
     </Container>
   );
