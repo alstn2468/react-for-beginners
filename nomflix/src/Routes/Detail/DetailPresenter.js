@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Loader from "Components/Loader";
+import Message from "Components/Message";
 import Ratings from "react-ratings-declarative";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -50,10 +52,12 @@ const Data = styled.div`
 
 const Title = styled.h3`
   font-size: 32px;
+  margin-bottom: 20px;
 `;
 
 const ItemContainer = styled.div`
-  margin: 20px 0px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 `;
 
 const Item = styled.span``;
@@ -69,7 +73,34 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const DetailPresenter = ({ result, error, loading }) =>
+const Imdb = styled.a`
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  width: 26px;
+  height: 16px;
+  border-radius: 2px;
+  background-image: url(${props => props.src});
+  background-position: center center;
+  background-size: cover;
+`;
+
+const Youtube = styled.img`
+  display: block;
+  position: relative;
+  bottom: 5px;
+  width: 46px;
+  height: 26px;
+  background-image: url(${props => props.src});
+  background-position: center center;
+  background-size: cover;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+const DetailPresenter = ({ result, error, loading, pathname }) =>
   loading ? (
     <>
       <Helmet>
@@ -77,6 +108,8 @@ const DetailPresenter = ({ result, error, loading }) =>
       </Helmet>
       <Loader />
     </>
+  ) : error ? (
+    <Message text={"Can't find anything."} />
   ) : (
     <Container>
       <Helmet>
@@ -102,6 +135,11 @@ const DetailPresenter = ({ result, error, loading }) =>
               ? result.original_title
               : result.original_name}
           </Title>
+          <span role="img" aria-label="Go to videos">
+            <Link to={`${pathname}/video`}>
+              <Youtube src={require("../../assets/youtube.png")} />
+            </Link>
+          </span>
           <ItemContainer>
             {result.release_date
               ? result.release_date.substring(0, 4)
@@ -118,6 +156,18 @@ const DetailPresenter = ({ result, error, loading }) =>
                 )}
             </Item>
             <Divider>•</Divider>
+            {result.imdb_id && (
+              <>
+                <Item>
+                  <Imdb
+                    href={`https://www.imdb.com/title/${result.imdb_id}`}
+                    target={"_blank"}
+                    src={require("../../assets/imdb.png")}
+                  />
+                </Item>
+                <Divider>•</Divider>
+              </>
+            )}
             {result.vote_average && parseFloat(result.vote_average) / 2 > 0 ? (
               <Item>
                 <Ratings rating={parseFloat(result.vote_average) / 2}>

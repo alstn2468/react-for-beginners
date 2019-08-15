@@ -3,6 +3,7 @@
 Learning React and ES6 by building a Movie Discovery App.
 
 ### Fundamentals
+
 1. Arrow Function
 2. Template Literals
 3. Object Destruction
@@ -14,10 +15,10 @@ Learning React and ES6 by building a Movie Discovery App.
 
 ### Screens
 
-- [ ] Home
-- [ ] TV Show
-- [ ] Search
-- [ ] Detail
+- [x] Home
+- [x] TV Show
+- [x] Search
+- [x] Detail
 
 ### API Verbs
 
@@ -28,3 +29,11 @@ Learning React and ES6 by building a Movie Discovery App.
 - [x] Airing Today (TV)
 - [x] Detail (TV, Movie)
 - [x] Search (TV, Movie)
+
+### Code Challenges
+
+- [x] IMDB Link
+- [ ] Tabs inside of Movie / Show Details (Youtube Videos, Production Company & Countries)
+- [ ] Collections Link
+- [ ] /collections Route
+- [ ] On TV Show, show season and creators
