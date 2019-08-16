@@ -1,8 +1,6 @@
-## Nomflix
+## React For Beginners
 
 Learning React and ES6 by building a Movie Discovery App.
-
-#### [[Demo Link]](https://alstn2468.github.io/React_For_Beginners)
 
 ### Fundamentals
 
@@ -14,6 +12,12 @@ Learning React and ES6 by building a Movie Discovery App.
 6. Array Map
 7. Array Filter
 8. For Each, Includes, Push
+
+### TypeScript with React.js
+
+## Nomflix
+
+#### [[Demo Link]](https://alstn2468.github.io/React_For_Beginners)
 
 ### Screens
 
