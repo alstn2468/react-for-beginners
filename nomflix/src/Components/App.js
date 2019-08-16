@@ -8,6 +8,7 @@ class App extends Component {
       <>
         <Router />
         <GlobalStyles />
+        <h1></h1>
       </>
     );
   }
