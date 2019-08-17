@@ -15,6 +15,8 @@ Learning React and ES6 by building a Movie Discovery App.
 
 ### TypeScript with React.js
 
+Learning React and TypeScript by building a React App.
+
 ## Nomflix
 
 #### [[Demo Link]](https://alstn2468.github.io/React_For_Beginners)
