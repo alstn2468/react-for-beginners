@@ -10,7 +10,7 @@ const reducer = (state, action) => {
     case DECREMENT:
       return { count: state.count - 1 };
     default:
-      throw new Error();
+      throw Error();
   }
 };
 
