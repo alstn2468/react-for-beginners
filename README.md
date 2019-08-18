@@ -17,9 +17,9 @@ Learning React and ES6 by building a Movie Discovery App.
 
 Learning React and TypeScript by building a React App.
 
-### React Hook
+### REDOCKS
 
-Learning React Hook.
+Learning React Hooks. (useContext, useReducer)
 
 ## Nomflix
 
