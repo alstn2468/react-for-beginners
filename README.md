@@ -19,7 +19,10 @@ Learning React and TypeScript by building a React App.
 
 ### REDOCKS
 
-Learning React Hooks. (useContext, useReducer)
+Learning React Hooks.
+
+- `useContext` : hypertranslate-app
+- `useReducer` : todo-app
 
 ## Nomflix
 
