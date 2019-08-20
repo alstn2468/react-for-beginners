@@ -1,4 +1,4 @@
-## React For Beginners
+# React For Beginners
 
 Learning React and ES6 by building a Movie Discovery App.
 
