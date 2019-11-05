@@ -1,6 +1,6 @@
 # React For Beginners
 
-Learning React and ES6 by building a Movie Discovery App.
+Learning React and ES6 by building a Movie Discovery App with [Nomad Coder](https://academy.nomadcoders.co/courses/category/KR).
 
 ### Fundamentals
 
