@@ -115,7 +115,25 @@ const ProductionData = styled.div`
     margin-right: 10px;
 `;
 
-const DetailPresenter = ({ result, error, loading, pathname }) =>
+const SeasonContainer = styled.div`
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+`;
+
+const SeasonPoster = styled.img`
+    height: 250px;
+    width: auto;
+    margin-bottom: 5px;
+`;
+
+const SeasonText = styled.p`
+    font-size: 16px;
+`;
+
+const DetailPresenter = ({ result, error, loading, pathname, isMovie }) =>
     loading ? (
         <>
             <Helmet>
@@ -252,6 +270,27 @@ const DetailPresenter = ({ result, error, loading, pathname }) =>
                             <ProductionData>No Data</ProductionData>
                         )}
                     </ProductionContainer>
+                    {!isMovie && (
+                        <ProductionContainer>
+                            <ProductionTitle>Season</ProductionTitle>
+                            {result.seasons ? (
+                                result.seasons.map((season) => (
+                                    <SeasonContainer>
+                                        <SeasonPoster
+                                            src={
+                                                season.poster_path
+                                                    ? `https://image.tmdb.org/t/p/w300${season.poster_path}`
+                                                    : require("../../assets/noPosterSmall.png")
+                                            }
+                                        />
+                                        <SeasonText>{season.name}</SeasonText>
+                                    </SeasonContainer>
+                                ))
+                            ) : (
+                                <ProductionData>No Data</ProductionData>
+                            )}
+                        </ProductionContainer>
+                    )}
                 </Data>
             </Content>
         </Container>
@@ -261,6 +300,7 @@ DetailPresenter.propTypes = {
     result: PropTypes.object,
     error: PropTypes.string,
     loading: PropTypes.bool.isRequired,
+    isMovie: PropTypes.bool.isRequired,
 };
 
 export default DetailPresenter;
